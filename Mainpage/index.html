@@ -12,17 +12,17 @@
 <body>
     <!--NAVBAR-->
     <header>
-        <nav id="mainNav">
+        <nav class="mainNav" id="Main_nav">
 
             <!--Adicionar Logo-->
         
-            <ul class="navLink">
+            <ul class="navLink" id="Nav_link">
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Serviços</a></li>
                 <li><a href="#">Fale Conosco</a></li>
             </ul>
 
-            <button id="Burguer" aria-label="Menu">
+            <button class="burguer" id="Burguer" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
 
@@ -30,18 +30,58 @@
     </header>
 
     <!--Menu para Smartphones-->
-    <div id="mobileMenu">
+    <div class="mobileMenu" id="Mobile_menu">
       <a href="#">Sobre</a>
       <a href="#">Serviços</a>
       <a href="#">Fale Conosco</a>
     </div>
 
     <!--HERO-->
-    <section id="Hero">
+    <section class="heroSlider" id="Hero_slider">
+
+        <div class="slides" id="Slides">
+
+            <input type="radio" name="radio-btn" id="Radio1">
+            <input type="radio" name="radio-btn" id="Radio2">
+            <input type="radio" name="radio-btn" id="Radio3">
+
+            <!--Slide 1-->
+            <div class="slide">
+                <img src="/Images/BAcl.png">
+            </div>
+             <!--Slide 2-->
+            <div class="slide">
+                <img src="/Images/R8.jpg">
+            </div>
+             <!--Slide 3-->
+            <div class="slide">
+                <img src="/Images/Captura de Tela (63).png">
+            </div>
+
+            <div class="navigationAuto">
+                <div class="autoBtn1"></div>
+                <div class="autoBtn2"></div>
+                <div class="autoBtn3"></div>
+            </div>
+
+            <div class="manualNavigation">
+                <label for="Radio1" class="manualBtn"></label>
+                <label for="Radio2" class="manualBtn"></label>
+                <label for="Radio3" class="manualBtn"></label>
+
+            </div>
+        
+        
+            
+
+        </div>
+        </div>
+
 
         
     </section>
 
+    <script src="Script.Js"></script>
 </body>
 
 </html>

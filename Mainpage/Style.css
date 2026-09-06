@@ -36,6 +36,9 @@ html{ scroll-behavior: smooth;}
       font-family: var(--f-body);
       font-weight: 300;
       overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 }
 
 body::before {
@@ -93,7 +96,7 @@ nav{
 .navLink a:hover::after { width: 100%; }
 
 /*-----------Menu Hamburguer-------*/
-#Burguer{
+.burguer{
     display:block; /*Setar como none*/
     flex-direction: column;
     gap: 5px;
@@ -103,7 +106,7 @@ nav{
     padding: 4px;
 }
 
-#Burguer span{
+.burguer span{
       display: block;
       width: 24px; height: 2px;
       background: var(--white);
@@ -116,7 +119,7 @@ nav{
  #Burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); } /*Adicionar fuções no JS*/
 
 /*------------Menu Smartphone-----------*/
-#mobileMenu{
+.mobileMenu{
       display: block; /*Setar como none*/
       flex-direction: column;
       position: fixed;
@@ -131,18 +134,66 @@ nav{
       transition: transform .35s v
 }
 
-#mobileMenu.open { /*Adicionar fuções no JS*/
+.mobileMenu.open { /*Adicionar fuções no JS*/
       transform: translateY(0);
       opacity: 1;
       pointer-events: all;
     }
-#mobileMenu a {
+
+.mobileMenu a {
       font-size: 1.1rem;
       letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--white);
       text-decoration: none;
       opacity: .8;
-      transition: color .2s, opacity .2s;
+      transition: color 0.2s, opacity 0.2s;
     }
-#mobileMenu a:hover { color: var(--gold); opacity: 1; }
+
+.mobileMenu a:hover { color: var(--gold); opacity: 1; }
+
+/*------------------------Container do Hero-------------------------*/
+.heroSlider{
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+/*------------------Configuração dos slides-----------------------*/
+.slides{
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 25%;
+    position: relative;
+}
+
+.slide img{
+    width: 800px;
+}
+
+.manualNavigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manualBtn{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+
+
+}
+
