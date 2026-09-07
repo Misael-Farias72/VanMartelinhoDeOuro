@@ -1,23 +1,18 @@
+//-------------------------Area apresentação automatica de slides----------//
+let count = 1;
+document.getElementById("Radio1").checked = true;
+ 
+//funçãozinha pra passar os slides
+function nextImage(){
+    count++
+    if(count>4){
+        count = 1;
+    }
 
-
-
-
-
-
-/*let currentSlide = 0
-const slides = document.querySelector(".slide");
-
-function showSlide(index){
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (index + slides.length) % slides.length;
-    slides[currentSlide].classList.add("active");
+    document.getElementById("Radio"+count).checked = true;
 }
 
-function changeSlide(direction){
-    showSlide(currentSlide + direction);
-}
-
-setInterval(() =>{
-    changeSlide(1);
-}, 10000)
+setInterval(function(){
+    nextImage();
+}, 5000)
 

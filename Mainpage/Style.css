@@ -51,14 +51,24 @@ body::before {
       z-index: 9999;
 }
 
-/*------------NAV-----------------------*/
+/*------------Barra de Navegaçao-----------------------*/
+.logo{
+    margin-right: auto;
+}
+
+.logo img{
+    width: 65px;
+    height: auto;
+    display: block;
+}
+
 nav{
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0 6vw;
     height: 68px;
     background: rgba(13,13,13,.92);
@@ -95,9 +105,9 @@ nav{
 .navLink a:hover { opacity: 1; color: var(--gold); }
 .navLink a:hover::after { width: 100%; }
 
-/*-----------Menu Hamburguer-------*/
+/*-----------icone Hamburguer-------*/
 .burguer{
-    display:block; /*Setar como none*/
+    display:none; /*Setar como none*/
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
@@ -120,7 +130,7 @@ nav{
 
 /*------------Menu Smartphone-----------*/
 .mobileMenu{
-      display: block; /*Setar como none*/
+      display: none; /*Setar como none*/
       flex-direction: column;
       position: fixed;
       top: 68px; left: 0; right: 0;
@@ -154,16 +164,15 @@ nav{
 
 /*------------------------Container do Hero-------------------------*/
 .heroSlider{
-    margin: 0 auto;
-    width: 800px;
-    height: 400px;
+    margin: 0px auto 0;
+    width: 100%;
     overflow: hidden;
+    
 }
 
 /*------------------Configuração dos slides-----------------------*/
 .slides{
     width: 400%;
-    height: 400px;
     display: flex;
 }
 
@@ -173,19 +182,25 @@ nav{
 
 .slide{
     width: 25%;
+    flex-shrink: 0;
     position: relative;
+    transition: 2s;
 }
 
 .slide img{
-    width: 800px;
+    width: 100%;
+    height: auto;
+    display: block;
 }
+
+/*-----------Navegação Manual slides----------*/
 
 .manualNavigation{
     position: absolute;
-    width: 800px;
-    margin-top: -40px;
+    width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 52%;
 }
 
 .manualBtn{
@@ -193,7 +208,65 @@ nav{
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
-
-
+    transition: 1s;
 }
+
+.manualBtn:not(:last-child){
+    margin-right: 13px;
+}
+
+.manualBtn:hover{
+    background-color: #C8A84B;
+}
+
+#Radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#Radio2:checked ~ .first{
+    margin-left: -25%;
+}
+
+#Radio3:checked ~ .first{
+    margin-left: -50%;
+}
+
+/*--------------Navegação automatica de slides----------*/
+
+.navigationAuto div{
+    border: 2px solid blue;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigationAuto{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 52%;
+}
+
+.navigationAuto div:not(:last-child){
+    margin-right: 13px;
+}
+
+#Radio1:checked ~ .navigationAuto .autoBtn1{
+    background-color: #C8A84B;
+}
+
+#Radio2:checked ~ .navigationAuto .autoBtn2{
+    background-color: #C8A84B;
+}
+
+#Radio3:checked ~ .navigationAuto .autoBtn3{
+    background-color: #C8A84B;
+}
+
+
+
+
+
 
